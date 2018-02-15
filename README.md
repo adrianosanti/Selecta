@@ -2,6 +2,8 @@
 Selecta is a very simple jQuery plugin to customise the display of select dropdown fields.
 It is designed to be very flexible and it probably won't work very well as a drop-in solution. I am of the opinion that a plugin or add-on should not dictate how one formats their stylesheets or markup, so the default styles for Selecta are very bare on purpose and you will need to add your own styles in order to make it look presentable.
 
+[View Demo](https://adrianosanti.github.io/Selecta/)
+
 ## How to Use
 ### Javascript
 First, make sure you are including the jQuery library in your code. Then, include Selecta.
