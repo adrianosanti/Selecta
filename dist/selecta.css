@@ -1,0 +1,106 @@
+.selecta * {
+	box-sizing: border-box;
+}
+
+.selecta {
+	display: block;
+	position: relative;
+}
+
+.selecta .selecta-element,
+.selecta .selecta-element select,
+.selecta .selecta-items {
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.selecta .selecta-element,
+.selecta .selecta-element select {
+	height: 100%;
+	z-index: -1;
+}
+
+.selecta .selecta-element select {
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+}
+
+.selecta .selecta-label {
+	min-height: 2.75rem;
+	line-height: 2.75rem;
+	position: relative;
+	z-index: 1;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.selecta .selecta-label:after {
+	background: #fff;
+	content: '\25bc';
+	display: block;
+	min-height: 2.75rem;
+	font-family: Arial, sans-serif;
+	position: relative;
+	text-align: center;
+	width: 2.75rem;
+	z-index: 2;
+	-webkit-flex-shrink: 0;
+	flex-shrink: 0;
+	-moz-transition: background 0.25s ease;
+	-o-transition: background 0.25s ease;
+	-webkit-transition: background 0.25s ease;
+	transition: background 0.25s ease;
+}
+
+.selecta .selecta-label .selecta-label-wrapper {
+	margin: 0;
+	min-width: 0;
+	overflow: hidden;
+	padding-right: 2.75rem;
+	position: relative;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 1rem;
+	z-index: 1;
+	-webkit-flex: 1;
+	flex: 1;
+}
+
+.selecta .selecta-items {
+	background: #fff;
+	border-top: none;
+	cursor: default;
+	max-height: 0;
+	overflow: auto;
+	top: 2.75rem;
+	z-index: 99;
+	-moz-transition: max-height 0.25s ease-in-out, -moz-transform 0.25s ease-out;
+	-o-transition: max-height 0.25s ease-in-out, -o-transform 0.25s ease-out;
+	-webkit-transition: max-height 0.25s ease-in-out, -webkit-transform 0.25s ease-out;
+	transition: max-height 0.25s ease-in-out, transform 0.25s ease-out;
+}
+
+.selecta .selecta-items.above {
+	bottom: 2.75rem;
+	top: auto;
+}
+
+.selecta .selecta-items ul {
+	overflow: hidden;
+}
+
+.selecta .selecta-items ul li {
+	-moz-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+	-o-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+	-webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+	transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+
+.selecta.selecta-native .selecta-element,
+.selecta.selecta-native .selecta-element select {
+	z-index: 99;
+}

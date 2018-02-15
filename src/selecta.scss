@@ -1,0 +1,96 @@
+@import "compass/css3";
+
+@mixin Selecta($height: 2.75rem, $background: #fff) {
+	background-color: $background;
+	display: block;
+	position: relative;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.selecta-element,
+	.selecta-element select,
+	.selecta-items {
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	.selecta-element,
+	.selecta-element select {
+		height: 100%;
+		z-index: -1;
+	}
+
+	.selecta-element select {
+		@include opacity(0);
+	}
+
+	.selecta-label {
+		min-height: $height;
+		line-height: $height;
+		position: relative;
+		z-index: 1;
+		@include display-flex;
+		@include justify-content(space-between);
+
+		&:after {
+			background: $background;
+			content: '\25bc';
+			display: block;
+			min-height: $height;
+			font-family: Arial, sans-serif;
+			position: relative;
+			text-align: center;
+			width: $height;
+			z-index: 2;
+			@include flex-shrink(0);
+			@include transition(background .25s ease);
+		}
+
+		.selecta-label-wrapper {
+			margin: 0;
+			min-width: 0;
+			overflow: hidden;
+			padding-right: $height;
+			position: relative;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			width: 1rem;
+			z-index: 1;
+			@include flex(1);
+		}
+	}
+
+	.selecta-items {
+		background: $background;
+		cursor: default;
+		max-height: 0;
+		overflow: auto;
+		top: $height;
+		z-index: 99;
+		@include transition(max-height .25s ease-in-out, transform .25s ease-out);
+
+		&.above {
+			bottom: $height;
+			top: auto;
+		}
+
+		ul {
+			overflow: hidden;
+
+			li {
+				@include transition(background-color .25s ease-in-out, color .25s ease-in-out);
+			}
+		}
+	}
+
+	&.selecta-native {
+		.selecta-element,
+		.selecta-element select {
+			z-index: 99;
+		}
+	}
+}
