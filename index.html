@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Selecta Demo</title>
+		<link rel="stylesheet" href="selecta.css">
+		<style>
+			.dropdown {
+				margin-bottom: 1.5rem;
+				width: 32rem;
+			}
+
+			.selecta {
+				background-color: #eee;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			.selecta.selecta-open {
+				background-color: #e2e0e0;
+			}
+
+			.selecta .selecta-label::after {
+				background-color: rgba(0, 0, 0, .05);
+			}
+
+			.selecta.selecta-hover .selecta-label::after {
+				background-color: rgba(0, 0, 0, .1);
+			}
+
+			.selecta .selecta-label .selecta-label-wrapper {
+				padding-left: 1rem;
+			}
+
+			.selecta .selecta-label .selecta-label-wrapper .selecta-pill::before {
+				content: ',\00a0';
+			}
+
+			.selecta .selecta-label .selecta-label-wrapper .selecta-pill:first-of-type::before {
+				content: '';
+			}
+
+			.selecta .selecta-items {
+				background-color: #eee;
+			}
+
+			.selecta .selecta-items ul {
+				list-style: none outside;
+				margin: 0;
+				padding: 0;
+			}
+
+			.selecta .selecta-items ul li {
+				padding: .25rem 0 .25rem 1rem;
+			}
+
+			.selecta .selecta-items ul li.highlighted {
+				background-color: rgba(0, 0, 0, .35);
+			}
+
+			.selecta .selecta-items ul li.selected {
+				background-color: rgba(0, 0, 0, .75);
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<div class="dropdown">
+				<select name="colours" class="colours">
+					<option value="">Select a colour</option>
+					<option value="#ff0000">Red</option>
+					<option value="#00ff00">Green</option>
+					<option value="#0000ff">Blue</option>
+					<option value="#00ffff">Cyan</option>
+					<option value="#ff00ff">Magenta</option>
+					<option value="#ffff00">Yellow</option>
+					<option value="#000000">Black</option>
+				</select>
+			</div>
+			<div class="dropdown multiple">
+				<select name="cities" class="cities" multiple>
+					<option value="">Which cities have you been to?</option>
+					<option value="New York">New York</option>
+					<option value="Paris">Paris</option>
+					<option value="Rio de Janeiro">Rio de Janeiro</option>
+					<option value="Milan">Milan</option>
+					<option value="Tokyo">Tokyo</option>
+					<option value="London">London</option>
+					<option value="Madrid">Madrid</option>
+					<option value="Cape Town">Cape Town</option>
+					<option value="Los Angeles">Los Angeles</option>
+					<option value="Vienna">Vienna</option>
+					<option value="Sydney">Sydney</option>
+					<option value="Shanghai">Shanghai</option>
+				</select>
+			</div>
+		</form>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="selecta.min.js"></script>
+		<script>
+			$(function() {
+				$('select').Selecta({
+					nativeOnMobile: true
+				});
+			});
+		</script>
+	</body>
+</html>
